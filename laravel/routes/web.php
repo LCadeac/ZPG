@@ -16,7 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('/accueil', 'AccueilController@accueil');
-Route::get('/dossier/{id_famille}', 'AccueilController@fiche_famille');
+Route::get('/dossier/{id_famille}/{id_enfant}', 'AccueilController@fiche_famille');
+
+Route::post('/dossier/{id_famille}', 'AccueilController@fiche_famille');
 
 
 Route::get('/historique/{id_famille}/{id_compte}/1', 'AccueilController@histo_garderie');
