@@ -1,27 +1,30 @@
 @extends('layout')
 
-<h2 style="color: blueviolet">
-    Voici votre fiche familliale, famille {{$id_famille}}
+<h2 style="color: #f91ecc">
+    Voici votre fiche familliale !
 </h2>
 
-
-<div class="panel panel-primary col-md-3" style="padding: 0px ; margin-right: 50px">
+@foreach($responsables as $index => $responsable)
+<div id="personne_{{$responsable}}" class="panel panel-primary col-md-3" style="padding: 0px ; margin-right: 50px">
     <div class="panel-heading">
-        <h3 class="panel-title">Informations relatives à votre famille :</h3>
+        <h3 class="panel-title">Membre n° {{$index + 1}}</h3>
     </div>
     <div class="panel-body">
-        <li>Famille : {{$id_famille}}</li>
-        <li>Responsable 1 : {{$id_famille}}</li>
-        <li>Responsable 2 : {{$id_famille}}</li>
-        <li>Foyer : {{$id_famille}}</li>
-        <li>Enfants : {{$id_enfant}}</li>
+        {{--<li>Famille : {{$familles[0]->idFamille}}</li>--}}
+        <li>Nom : {{$responsables[$index][0]->nom}}</li>
+        <li>Prenom : {{$responsables[$index][0]->prenom}}</li>
+        <li>Personne : {{$responsables[$index][0]->idPersonne}} </li>
     </div>
 </div>
+@endforeach
 
 
-<div id="#container_{{$id_enfant}}">
-</div>
 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+{{--
 <script>
     jQuery.ajaxSetup({
         headers: {
@@ -29,6 +32,6 @@
         }
     });
 
-    jQuery('#container_{{$id_enfant}}')
-        .load('/dossier/{{$id_famille}}', {});
-</script>
+    jQuery('#container_{{$idFamille}}')
+        .load('/dossier/{{$idFamille}}', {});
+</script>--}}

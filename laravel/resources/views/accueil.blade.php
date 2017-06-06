@@ -8,7 +8,7 @@
         <div class="panel-heading">
             <h3 class="panel-title">
                 <input type="button" value="Fiche famille"
-                       onclick="javascript:location.href='/dossier/20001'"></h3>
+                       onclick="javascript:location.href='/dossier/20001/29786'"></h3>
         </div>
         <div class="panel-body">
             <li>Responsables</li>

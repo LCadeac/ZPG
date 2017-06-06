@@ -21,6 +21,11 @@ Route::get('/dossier/{id_famille}/{id_enfant}', 'AccueilController@fiche_famille
 Route::post('/dossier/{id_famille}', 'AccueilController@fiche_famille');
 
 
+
+Route::get('/accueil2/{id_famille}', 'AccueilController@ma_famille');
+
+
+
 Route::get('/historique/{id_famille}/{id_compte}/1', 'AccueilController@histo_garderie');
 Route::get('/historique/{id_famille}/{id_compte}/3', 'AccueilController@histo_jeux');
 Route::get('/historique/{id_famille}/{id_compte}/4', 'AccueilController@histo_cafe');
