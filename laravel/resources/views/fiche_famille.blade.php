@@ -4,34 +4,34 @@
     Voici votre fiche familliale !
 </h2>
 
+<div class="row">
 @foreach($responsables as $index => $responsable)
-<div id="personne_{{$responsable}}" class="panel panel-primary col-md-3" style="padding: 0px ; margin-right: 50px">
-    <div class="panel-heading">
-        <h3 class="panel-title">Membre n° {{$index + 1}}</h3>
+    <div id="personne" class="panel panel-primary col-md-3" style="padding: 0px ; margin-left : 50px ; margin-right: 50px">
+        <div class="panel-heading">
+            <h3 class="panel-title">Parent n° {{$index + 1}}</h3>
+        </div>
+        <div class="panel-body">
+            <li>Nom : {{$responsables[$index][0]->nom}}</li>
+            <li>Prenom : {{$responsables[$index][0]->prenom}}</li>
+            <li>Personne : {{$responsables[$index][0]->idPersonne}} </li>
+            <li>Sexe : {{$responsables[$index][0]->codeSexe}} </li>
+        </div>
     </div>
-    <div class="panel-body">
-        {{--<li>Famille : {{$familles[0]->idFamille}}</li>--}}
-        <li>Nom : {{$responsables[$index][0]->nom}}</li>
-        <li>Prenom : {{$responsables[$index][0]->prenom}}</li>
-        <li>Personne : {{$responsables[$index][0]->idPersonne}} </li>
-    </div>
-</div>
 @endforeach
+</div>
 
 
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-
-{{--
-<script>
-    jQuery.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-        }
-    });
-
-    jQuery('#container_{{$idFamille}}')
-        .load('/dossier/{{$idFamille}}', {});
-</script>--}}
+<div class="row">
+@foreach($enfants as $index => $enfant)
+    <div id="personne" class="panel panel-primary col-md-3" style="padding: 0px ; margin-left : 50px ; margin-right: 50px">
+        <div class="panel-heading">
+            <h3 class="panel-title">Enfant n° {{$index + 1}}</h3>
+        </div>
+        <div class="panel-body">
+            <li>Nom : {{$enfant[0]->nom}}</li>
+            <li>Prénom : {{$enfant[0]->prenom}}</li>
+            <li>Date de naissance : {{$enfant[0]->dateNaissance}}</li>
+        </div>
+    </div>
+@endforeach
+</div>

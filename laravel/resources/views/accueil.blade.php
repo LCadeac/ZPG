@@ -1,14 +1,14 @@
 @extends('layout')
 
 <h1 style="color: #e22aaf">
-    Bienvenue sur l'espace personnel de votre famille !
+    Bienvenue sur l'espace personnel de votre famille {{$idFamille}} !
 </h1>
 <div class="row container">
     <div class="panel panel-primary col-md-3" style="padding: 0px ; margin-right: 50px">
         <div class="panel-heading">
             <h3 class="panel-title">
-                <input type="button" value="Fiche famille"
-                       onclick="javascript:location.href='/dossier/20001/29786'"></h3>
+                <input type="button" class="btn-primary" value="Fiche famille"
+                       onclick="javascript:location.href='/dossier/{{$idFamille}}'"></h3>
         </div>
         <div class="panel-body">
             <li>Responsables</li>
@@ -17,7 +17,8 @@
     </div>
     <div class="panel panel-primary col-md-3" style="padding: 0px ; margin-right: 50px">
         <div class="panel-heading">
-            <h3 class="panel-title">Historique garderie</h3>
+            <h3 class="panel-title"><input type="button" class="btn-primary" value="Historique garderie"
+                                           onclick="javascript:location.href='/historique/{{$idFamille}}/{{$idCompte}}/1'"></h3>
         </div>
         <div class="panel-body">
             <li>Date</li>
@@ -27,7 +28,8 @@
     </div>
     <div class="panel panel-primary col-md-3" style="padding: 0px ; margin-right: 50px">
         <div class="panel-heading">
-            <h3 class="panel-title">Historique jeux</h3>
+            <h3 class="panel-title"><input type="button" class="btn-primary" value="Historique jeux"
+                                           onclick="javascript:location.href='/historique/{{$idFamille}}/{{$idCompte}}/3'"></h3>
         </div>
         <div class="panel-body">
             <li>Date</li>
@@ -37,7 +39,8 @@
     </div>
     <div class="panel panel-primary col-md-3" style="padding: 0px ; margin-right: 50px">
         <div class="panel-heading">
-            <h3 class="panel-title">Historique café</h3>
+            <h3 class="panel-title"><input type="button" class="btn-primary" value="Historique café"
+                                           onclick="javascript:location.href='/historique/{{$idFamille}}/{{$idCompte}}/4'"></h3>
         </div>
         <div class="panel-body">
             <li>Date</li>

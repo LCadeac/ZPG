@@ -17,8 +17,8 @@ class Enfants extends Model {
 
 
 
-    public static function get_enfant($id_enfant) {
-        $enfant = self::whereCle($id_enfant)->first();
+    public static function get_enfant($idEnfant) {
+        $enfant = self::where('idEnfant', '==', $idEnfant)->first();
 
         if (!$enfant) {
             return null;
@@ -27,5 +27,15 @@ class Enfants extends Model {
         return $enfant;
     }
 
+
+
+    public static function get_enfants($idEnfant) {
+        $prenomEnfant = Enfants
+            ::leftJoin('Personne', 'Personne.idPersonne', "=", 'Enfant.idPersonne')
+            ->where('Enfant.idEnfant', '=', $idEnfant)
+            ->get(['Personne.*']);
+
+        return $prenomEnfant;
+    }
 
 }

@@ -9,13 +9,17 @@
 namespace App\Http\Controllers;
 
 
+use App\Enfants;
 use App\Famille;
 use Illuminate\Support\Facades\App;
 
 class AccueilController extends Controller {
 
-    public static function accueil() {
-        return view('accueil');
+
+    public static function accueil($idFamille) {
+        $idCompte = 2;
+
+        return view('accueil', compact('idFamille', 'idCompte'));
     }
 
 
@@ -33,17 +37,32 @@ class AccueilController extends Controller {
 
         $responsable_1 = Famille::get_id_respondable_1($idFamille);
         $responsable_2 = Famille::get_id_respondable_2($idFamille);
+        $liste_enfants = Enfants::get_liste()->where('idFamille', '==', $idFamille);
+        foreach ($liste_enfants as $index => $liste_enfant) {
+            $idEnfant = $liste_enfant->idEnfant;
+            $enfants[$index] = Enfants::get_enfants($idEnfant);
 
+        }
         $responsables = [$responsable_1, $responsable_2];
 
 
-        return view('fiche_famille', compact('idFamille', 'familles', 'responsables'));
+
+
+        return view('fiche_famille', compact('idFamille', 'familles', 'responsables', 'enfants'));
     }
 
 
 
-    public static function histo_garderie($idFamille, $id_compte) {
-        return view('histo_garderie', compact('$idFamille', 'id_compte'));
+    public static function get_enfant($idFamille) {
+        $enfants = Enfants::get_liste()->where('idFamille', '==', $idFamille);
+
+        return $enfants;
+    }
+
+
+
+    public static function histo_garderie($idFamille, $idCompte) {
+        return view('histo_garderie', compact('idFamille', 'idCompte'));
     }
 
 

@@ -62,16 +62,6 @@ class Famille extends \Illuminate\Database\Eloquent\Model {
     }
 
 
-
-    public static function get_respondable_2($idResponsable) {
-        $responsable = Famille
-            ::leftJoin('Personne', 'Famille.idResponsable2', '=', 'Personne.idPersonne')
-            ->where("idPersonne", "=", $idResponsable)
-            ->get(['Personne.*']);
-
-        return $responsable;
-    }
-
     /*public function get_enfants($enfants) {
         $enfants = Personne
             ::leftJoin('Enfant', 'Enfant.id', '=', 'Personne.Enfant_id')
