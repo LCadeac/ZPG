@@ -1,11 +1,8 @@
 @extends('layout')
 
 <h1 style="color: blueviolet">
-    L'historique de vos demandes de café
+    L'historique de vos demandes pour famille {{$idFamille}} pour services {{$idCompte}}
 </h1>
-
-<h2>Montant total : {{$montant_total}} €</h2>
-
 
 @foreach($operations as $index => $operation)
     <div class="panel panel-primary col-md-3" style="padding: 0px ; margin-left : 50px ; margin-right: 50px">

@@ -25,10 +25,16 @@ Route::post('/dossier/{idFamille}', 'AccueilController@fiche_famille');
 Route::get('/dossier/{idFamille}', 'AccueilController@ma_famille');
 
 
-Route::get('/enfant/{idFamille}', 'AccueilController@get_enfant');
 
 
 
-Route::get('/historique/{idFamille}/{idCompte}/1', 'AccueilController@histo_garderie');
+Route::get('/historique/{idFamille}/{idCompte}/2', 'AccueilController@histo_garderie');
+
 Route::get('/historique/{idFamille}/{idCompte}/3', 'AccueilController@histo_jeux');
 Route::get('/historique/{idFamille}/{idCompte}/4', 'AccueilController@histo_cafe');
+
+
+Route::get('/historique/{idFamille}/{idCompte}', 'AccueilController@choix_historique');
+
+
+

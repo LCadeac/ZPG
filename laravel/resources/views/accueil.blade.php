@@ -18,34 +18,31 @@
     <div class="panel panel-primary col-md-3" style="padding: 0px ; margin-right: 50px">
         <div class="panel-heading">
             <h3 class="panel-title"><input type="button" class="btn-primary" value="Historique garderie"
-                                           onclick="javascript:location.href='/historique/{{$idFamille}}/{{$idCompte}}/1'"></h3>
+                                           onclick="javascript:location.href='/historique/{{$idFamille}}/2/2'"></h3>
         </div>
         <div class="panel-body">
-            <li>Date</li>
-            <li>Durée</li>
-            <li>Montant</li>
+            <li>Durée totale</li>
+            <li>Montant total</li>
         </div>
     </div>
     <div class="panel panel-primary col-md-3" style="padding: 0px ; margin-right: 50px">
         <div class="panel-heading">
             <h3 class="panel-title"><input type="button" class="btn-primary" value="Historique jeux"
-                                           onclick="javascript:location.href='/historique/{{$idFamille}}/{{$idCompte}}/3'"></h3>
+                                           onclick="javascript:location.href='/historique/{{$idFamille}}/3/3'"></h3>
         </div>
         <div class="panel-body">
-            <li>Date</li>
-            <li>Durée</li>
-            <li>Montant</li>
+            <li>Durée totale</li>
+            <li>Montant total</li>
         </div>
     </div>
     <div class="panel panel-primary col-md-3" style="padding: 0px ; margin-right: 50px">
         <div class="panel-heading">
             <h3 class="panel-title"><input type="button" class="btn-primary" value="Historique café"
-                                           onclick="javascript:location.href='/historique/{{$idFamille}}/{{$idCompte}}/4'"></h3>
+                                           onclick="javascript:location.href='/historique/{{$idFamille}}/4/4'"></h3>
         </div>
         <div class="panel-body">
-            <li>Date</li>
-            <li>Durée</li>
-            <li>Montant</li>
+            <li>Durée totale</li>
+            <li>Montant total</li>
         </div>
     </div>
 </div>
